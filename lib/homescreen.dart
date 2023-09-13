@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login.dart'; // Importe o arquivo login.dart
 
 class RecipeApp extends StatelessWidget {
   @override
@@ -15,6 +16,19 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Receitas'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              // Navegue de volta para a tela de login ao pressionar o botão de voltar
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

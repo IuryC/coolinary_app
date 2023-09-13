@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'homescreen.dart'; // Importe o arquivo homescreen.dart
+import 'login.dart'; // Importe o arquivo login.dart
 
 void main() {
   runApp(MyApp());
@@ -25,13 +25,13 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // Aguarde 3 segundos e, em seguida, navegue para a HomeScreen
+    // Aguarde 3 segundos e, em seguida, navegue para a tela de login
     Timer(
       Duration(seconds: 3),
           () {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => HomeScreen(),
+            builder: (context) => LoginScreen(),
           ),
         );
       },
@@ -44,15 +44,15 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.black, // Define o fundo como preto
       body: Center(
         child: Container(
-          width: 140, // Diâmetro do widget redondo = 70 x 2
-          height: 140,
+          width: 150, // Tamanho da imagem
+          height: 150,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.black, // Define a cor do círculo como preto
           ),
           child: Center(
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(70), // Define o raio do círculo
+              borderRadius: BorderRadius.circular(75), // Define o raio do círculo
               child: Image.asset(
                 'assets/imgs/splash.png', // Substitua pelo caminho da sua imagem de splash
                 width: 150,
